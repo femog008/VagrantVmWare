@@ -110,11 +110,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
 				# Restart
 				new_node_config.vm.provision :shell, inline: "sudo shutdown -r now"
-			else
-				puts "######## Jenkins Server not Found. Skipping shell script..."
-
-				new_node_config.vm.post_up_message = "This is the not value here #{new_node[:host].to_s}"
-				
 			end
 		end # end config
 	end # end cluster
